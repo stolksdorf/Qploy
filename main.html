@@ -1,0 +1,86 @@
+  <head>
+    <link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+  </head>
+<body> 
+<div id="wrapper">
+  
+<h1>QPLOY</h1>
+<h5>QBITE-Approved Persistent Live-action Operation Ygdrasil!</h5>
+
+<table>
+<tr><td width="400px">
+ <div id="rank">
+  <h3>Leader Board</h3>
+  <table>
+     <tr><td width="150px"><b>Name</b></td><td width="70px"><b>Score<b></td><td width="50px"><b>Kills</b></td><td width="50px"><b>Deaths<b></td>
+  {% for rank in ranks %}
+    <tr>
+    <td>{{rank.name}}</td><td>{{rank.score}}</td><td>{{rank.kills}}</td><td>{{rank.lives}}</td>
+    </tr>
+  {% endfor %} 
+  </table>
+  </div>  
+</td> <td>
+
+   <br>
+  <div id="report">
+  <h3>Report Kill</h3>
+  <form action="" method="post" accept-charset="utf-8">
+    <input type="hidden" name="process" value="save_kill">
+    <select name="assassin">
+    {% for player in players %}
+      <option value="{{player.name}}">{{player.name}}</option>
+    {% endfor %}
+    </select>
+    Killed
+    <select name="target">
+     {% for player in players %}
+      <option value="{{player.name}}">{{player.name}}</option>
+    {% endfor %}
+    </select>
+    <br>
+    <input type="text" name="method" size="40" value="How did you deliver the poison?" id="method">   
+    <input type="submit" value="Submit">
+  </form>
+  </div>
+  
+  </td></tr>
+
+  </table>
+
+
+
+<div id="kill">
+<h3>Kill Board</h3>
+{% for kill in kills %}
+  <div> {{kill.assassin}} poisoned {{kill.target}} at {{kill.when|date:"P M j"}} by {{kill.method}}
+{% endfor %} 
+</div>
+
+  <div id="player-signup">
+  <h3>Player Sign Up</h3>
+  <form action="" method="post" accept-charset="utf-8">
+    <input type="hidden" name="process" value="save_player">
+    <input type="text" name="signup" value="" id="signup">
+    <input type="submit" value="Join the Game!">
+  </form>
+  </div>
+
+<div id="rules">
+<h3>Rules</h3>
+The rules of QPLOY are simple. Poison other players by using marks, small pieces of paper with an 'X', either in or close by their food.
+<ol>
+<li>The "poison" must be at least 1cm by 1cm with a clearly drawn "x"</li>
+<li>The poison must be either on the food, or something <b>directly</b> touching the food.
+<li>The target has to actually eat the poisoned food. If he or she sees it's poisoned before they eat it, they are safe</li>
+<li>You must inform your target when you successfuly killed them</li>
+<li>The game is played at all times, every where.</li>
+<li>You can die as many times as you like, it will just negatively impact your score</li>
+<li><b>Trust no one</b></li>
+</ol>
+If you have any question, comments, would like me to fix/remove accidental player names or kill reports, email me at scott.tolksdorf@gmail.com
+</div>
+
+
+</div>
+</body>

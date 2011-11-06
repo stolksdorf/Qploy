@@ -1,0 +1,33 @@
+body{
+    font-family:Verdana,Arial;
+
+    
+}
+h1{
+   font-size:120px;
+   margin-bottom:0px;
+   margin-left:-15px;
+}
+h3{
+   font-size:25px;
+   margin-bottom:5px;
+}
+h5{
+   font-size:12px;
+   margin-bottom:5px;
+}
+
+div#wrapper{
+    background-color:#FFFFFF;
+    width:900px;
+    height:100%
+    
+    padding:0px;
+    margin-top:0px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:0px; 
+}
+
+
+
